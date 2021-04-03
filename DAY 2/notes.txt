@@ -1,0 +1,232 @@
+[1.]
+for i in range(n): ===> runs n+1 times
+  a = a+n    ==> runs n times
+  b = b+n    ==> runs n times
+for i in range(m):
+  print('')
+total complexity --> 3n+1+m
+Big O notation tn = O(n+m) roundToN cause of n is large
+
+[2.]
+for i in range(n):
+ for j in range(m):
+   anything()
+
+O(n*m)
+
+[3.]
+for i in range(2*n):
+ print('')
+-----------------------
+O(2n)==> O(n)
+
+[4.]
+for i in range(2**n):
+  print('')
+----------------------- 
+O(2**n)===> O(2^n)
+
+[5.]
+for i in range(n):
+ for j in range(n,i-1):
+  print('')
+-----------------------------
+Number of executions --- i(j)
+1(n)+2(n-1)+.....
+so if innerLoop goes for more no of times than outer
+
+so complexity is n+(n-1)+(n-2)+....+0
+O(n^2)
+
+[6.]
+for i in range(n):
+ for j in range(i+1,n):
+  print('')
+-------------------
+for inner loop i(j)
+1(n-2)+2(n-3)+.........
+n-2 + n-3 +....+1
+O(n^2)
+
+[7.]
+t1 = 10^6 n + 5000
+t2 = 2**n
+which is more optimised ???
+
+for bigger value
+t2 will be greater
+
+so t1 is more optimised
+
+[8.]
+while i<n:
+ print(i+3)
+ i+=1
+-------
+O(n-1) ==> O(n)
+
+[9.]
+while i<n:
+ print(i+3)
+ i*=2
+
+let i is 0 infinite times
+let i is 1
+{+} values of i == 1 2 4 8 16 ....
+2^0 2^1 2^2 2^3 ....
+2^i > n
+i = log(n) with base2
+O(logn)
+
+[10.]
+i=n
+while i>0:
+ j=i
+ while j>0:
+  print(j)
+  j-=1
+ i/=2
+
+suppose n is 20
+i 20  j = 20 j=19 j18 j17 .... j1 i10
+i 10 j 10 j 9 i 5
+i 5 j 5 j 4 i 2.5==2
+i 2 j 2 j 1 i 1
+i1 j1 j0 i=0
+loop ends
+
+andar wala individually i baar chlega
+bahar i wala aadha ho rha to ---|
+
+innerLoop runs --- n + n/2 + n/4 + n/8 + .... + 1
+gpSUM = 2n
+O(n) 
+
+[11.]
+i=0
+for j in range(n):
+ i*=2
+ if i<n:
+  break
+-------
+O(n)
+
+if i  is 1 (i=1)
+i values --- 2 4 8 16 ....
+whenever 2^j < n
+loop ends
+so j is log(n)
+then O(log(n))
+
+[12.]
+recursion
+
+fibonacci series
+def f(n):
+if n==0 or n==1:
+ return 1
+return f(n-1)+f(n-2)
+
+each lvl call 2^i times
+2^1 +2^2 + 2^3 + ....
+most innerMost loop calls -- 2^(n-1) ==> 2^n
+O(2^n)
+
+
+[13.]
+def f(n):
+ if n==0:
+  return 1
+ return f(n-1)
+-------
+args  n-1 n-2 n-3 n-4 .... 0
+count  1   2   3   4 ..... n
+o(n)
+
+[14.]
+def f(n):
+ if n==0:
+ return 1
+return f(n/2)
+
+args ---> n n/2 n/4 ....
+
+O(log(n))
+
+[15.]
+def f(n):
+ if n==0:
+  return 1
+ for i in range(n):
+  print(i**2)
+ return f(n/2)
+
+args n n/2 n/4 ....
+no of fxn calls --- 
+no of times inner loop goes -->
+n + n/2 + n/4 ....
+so total times === 2n
+O(2n) ==> O(n)
+
+[16.]
+def f(n):
+ if n%2 == 0 :
+  return 1
+ return f(n-1) + f(n-2)
+if n is odd
+       ____ f(n-1) runs one time
+      /
+n(odd)
+      \____ f(n-2) runs infinite times (as 1 then -1 then -3)
+##same for even 
+
+so runs infinite
+
+_________________________________
+
+def f(n):
+ if n%2 == 0 or n<2:
+  return 1
+ return f(n-1) + f(n-2)
+if even then 1 times so O(1)
+But timeComplexity is considered for worst case
+if odd then
+let n is 11
+f(10)+f(9)
+ 1     ||
+      f(7)
+       \\
+       f(5)
+        \\ 
+         f(3)
+
+O(n/2) ==> O(n)
+
+[17.]
+arr = input()
+for i in range(len(arr)):
+ if arr[i]%2==0:
+  break
+ i*=2    ==> it will not affect value of i 		in loop
+
+if all elem are even or first is even then O(1)
+if all are odd then
+O(len(arr))
+
+[18.]
+Greatest Common Divisor (Euclid's Formulae)
+def gcd(a,b):
+ if a==0:
+  return b
+ if b==0:
+  return a
+ if a==b:
+  return a
+ if (a>b):
+  return gcd(a-b,b)
+ return gcd(a,b-a)
+
+O(log(a+b))
+
+Hashing O(1)
+lec6 python Hashing Binary
