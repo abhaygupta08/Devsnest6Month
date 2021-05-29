@@ -1,0 +1,51 @@
+GRAPHS
+|
+|__	[] Directional
+|	[] Undirectional / Bidirectional / Non-Directional
+|
+|
+|__	[] Cyclic
+|	[] Non-Cyclic / Acyclic
+|
+|
+|__	[] Weighted
+	[] Non-weighted
+
+
+DAG - Directed Acyclic Graph
+
+Traversals --
+[1]  DFS - Depth First Search (descendents in depth then 2nd child) - PREORDER
+[2]  BFS - Breadth First Search (all children on same lvl then next) - LVLORDER
+
+		 ____ Vertex
+Graphs -|
+		|____ Edges
+
+(V-1)V  =  V^2 edges can be in directional graph
+
+
+==[METHOD to STORE]==
+
+Adjacency List
+ 
+1.dictionary of list
+[++] beneficial for non-dense graph
+{
+	0 : [2,4,5]
+	2 : [4,3]
+}
+
+2. ==> i to j connection exists or not set to 1 if exists else 0
+[++] beneficial for dense graph
+
+ 	       j
+	    0 1 2 3 4
+	 0  1 1 0 0 1
+i	 1  0 0 1 1 0
+	 2  0 0 0 1 0
+	 3  0 0 0 0 0
+	 4  0 1 0 1 0
+
+this is directed
+if graph is weighted then replace 1 corresponsing weight

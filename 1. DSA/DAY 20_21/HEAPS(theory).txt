@@ -1,0 +1,38 @@
+HEAPS
+
+
+Max Heap
+[+] N > L,R
+[+] Complete BInary Tree
+       100
+     50   70
+  42 37  62 38
+ 41
+
+
+Max Heap
+[+] N < L,R
+[+] Complete BInary Tree
+
+
+
+[===] addition to heap
+add to leftmost leaf node
+then compare with parent if greater than parent then replace ND FOLLOW NEXT else got Sol then go the parent's parent do compare do till root
+
+[===] deletion in heap
+- we dont allow delete to help for non-root elements
+- we only allow to delete head(root)
+we take lowestmost element(rightmost on leaf lvl) then compare with both childs replace with biggest in NLR then do compare again for next lvl element untill leaf lvl
+(((Above process called Heapify)))
+
+
+BINARY HEAP
+|
+|
+---> Min and max
+
+parent i
+left 2i+1
+right 2i+2
+
