@@ -1,0 +1,23 @@
+[+] display
+block 
+inline 
+inline block 
+none
+
+==+ with inline lvl elements you can't give width and height as they take content's size as box border
+
+[+] position 
+static - where it should be
+absolute - wrt parent to its parent
+relative - wrt its own postion in static
+sticky - stats in static untill it is in viewport then becomes fixed
+fixed - fixed to a posi in Window. Posi dont change on scroll or changing window size etc
+
+[+] overflow (if content is extra then size of container then used)
+visible - shows all content dont hides
+hidden - hides the part which overflowed
+scroll - gives a scroll option
+auto - browser will decide
+
+ [+] overflow-x 
+ [+] overflow-y

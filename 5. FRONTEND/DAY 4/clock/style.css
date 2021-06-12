@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    min-width: 430px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.heading{
+    margin-top: 10vh;
+    text-align: center;
+    width: 100%;
+}
+.container{
+    height:75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.clock{
+    border-radius: 50%;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow:  7px 7px 20px #9d9d9d,
+             -7px -7px 20px #ffffff;
+    border:10px solid rgba(108, 179, 221, 0.788);
+    width:400px;
+    height:400px;
+    position: relative;
+
+}
+.minute,.hour,.second,.dot{
+    height:2px;
+    background-color: rgb(87, 184, 240);
+    transform-origin: left;
+    position: absolute;
+    top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+.dot{
+    width:2px;
+    border: 5px solid rgb(87, 184, 240);
+    border-radius: 50%;
+}
+.second{
+    transform: rotate(45deg);
+    width:170px;
+    animation: secondAnimation 60s linear infinite;
+}
+.minute{
+    transform: rotate(90deg);
+    width:120px;
+    animation: minuteAnimation 3600s linear infinite;
+}
+
+.hour{
+    transform: rotate(120deg);
+    width:70px;
+    animation: hourAnimation 216000s linear infinite;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:10vh;
+    width: 100%;
+    color: white;
+    background-color: rgb(53, 52, 52);
+
+}
+
+
+@keyframes hourAnimation{
+    0%{
+        translate: rotate(1deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes minuteAnimation{
+    0%{
+        translate: rotate(1deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes secondAnimation{
+    0%{
+        translate: rotate(1deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

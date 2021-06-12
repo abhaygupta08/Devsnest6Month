@@ -23,7 +23,7 @@ main .resumeHeading{
     margin-top: -15px;
     position: absolute;
     background-color: white;
-    width:15%;
+    width:10em;
 
 }
 main .resumeHeading h2{
@@ -78,9 +78,6 @@ footer{
     .seperator{
         height:50rem;
     }
-    main .resumeHeading{
-        width:20%;
-    }
 }
 @media (max-width:768px){
     .container{
@@ -94,18 +91,5 @@ footer{
         width:100%;
         margin-top:10%;
     }
-    main .resumeHeading{
-        width:25%;
-    }
 
-}
-@media (max-width:590px){
-    main .resumeHeading{
-        width:30%;
-    }
-}
-@media (max-width:480px){
-    main .resumeHeading{
-        width:40%;
-    }
 }
