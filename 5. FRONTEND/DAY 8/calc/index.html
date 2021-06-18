@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR | MADE BY ABHAY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 style="z-index: 1;">CALCULATOR | MADE BY ABHAY</h2>
+    <div class="calc">
+        <div id="calcScreen">
+
+        </div>
+        <div class="calcButtons">
+            <button class="calcButton" onclick="logCalc(this)">1</button>
+            <button class="calcButton" onclick="logCalc(this)">2</button>
+            <button class="calcButton" onclick="logCalc(this)">3</button>
+            <button class="calcButton" onclick="logCalc(this)">/</button>
+            <button class="calcButton" onclick="logCalc(this)">4</button>
+            <button class="calcButton" onclick="logCalc(this)">5</button>
+            <button class="calcButton" onclick="logCalc(this)">6</button>
+            <button class="calcButton" onclick="logCalc(this)">*</button>
+            <button class="calcButton" onclick="logCalc(this)">7</button>
+            <button class="calcButton" onclick="logCalc(this)">8</button>
+            <button class="calcButton" onclick="logCalc(this)">9</button>
+            <button class="calcButton" onclick="logCalc(this)">Power(P)</button>
+            <button class="calcButton" onclick="logCalc(this)">0</button>
+            <button class="calcButton" onclick="logCalc(this)">+</button>
+            <button class="calcButton" onclick="logCalc(this)">-</button>
+            <button class="calcButton" onclick="calcEvaluate()" style="height:132px">=</button>
+            <button class="calcButton" onclick="calcClear()" style="width:198px;position:relative;top:-66px">C</button>
+        </div>
+
+    </div>
+    <script>
+        var expre = "";
+        
+        document.querySelector("body").addEventListener("keypress",function(e){
+            if(e.charCode>=48 && e.charCode<=57 || e.charCode == 43 || e.charCode == 45 || e.charCode == 42 || e.charCode == 47){
+                expre += e.key;
+                document.querySelector("#calcScreen").innerText = expre;
+            }
+            else if(e.charCode==13){
+                calcEvaluate();
+            }
+            else if(e.charCode==99){
+                calcClear();
+            }
+            else if (e.charCode == 112) {
+                expre += "**";
+                document.querySelector("#calcScreen").innerText = expre;
+            }
+            console.log(e.key,e.charCode);
+        })
+        function logCalc(event){
+            if(event.innerText=="Power(P)"){
+                expre += "**";
+                document.querySelector("#calcScreen").innerText = expre;            
+        }
+        else{
+            expre += event.innerText;
+            document.querySelector("#calcScreen").innerText = expre;    
+        }
+    }
+        function calcEvaluate(){
+            if(expre.length)
+            expre = document.querySelector("#calcScreen").innerText = eval(expre);
+        }
+        function calcClear() {
+                expre = document.querySelector('#calcScreen').innerText = ''
+            }
+        setInterval(() => {
+            if (document.activeElement != document.body) document.activeElement.blur();
+        }, 1000);
+    </script>
+</body>
+</html>
