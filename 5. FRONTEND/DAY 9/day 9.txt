@@ -1,0 +1,28 @@
+const newW = window.open();
+newW.window.location = "https://google.com";
+
+neW.window.close()
+
+===================================
+CALL APPLY BIND
+
+const server = {
+serverName : "aa";
+getInvite : function(){
+console.log(this.serverName);
+}
+}
+
+const server2 = {
+serverName : "bb";
+}
+
+server.getInvite.call(obj,args,args)
+or 
+server.getInvite.apply(obj,[args,args])
+// bb
+
+const methodSaved = server.getInvite.bind(obj,args,args)
+
+methodSaved is fxn and call it using methodSaved()
+
