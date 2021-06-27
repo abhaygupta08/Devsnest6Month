@@ -2,9 +2,13 @@ window.onload = function(){
 // console.log(sq)
 const row = document.createElement("div");
 row.classList.add("row");
+
+
+
 const sq = document.createElement("div");
 sq.classList.add("sq","sq-white");
 sq.setAttribute("onclick","toggleColor(this)");
+
 for(let i =0;i<10;i++){
     row.innerHTML += sq.outerHTML;
 }

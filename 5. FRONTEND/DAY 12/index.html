@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP | Abhay Gupta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <label><h1>TODO APP</h1></label>
+        <div class="iconZ">
+            <i class="fa fa-moon-o icon darklight" aria-hidden="true"></i>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="form">
+                <label>
+                    <div class="icon">
+                        <i class="fa fa-pencil-square-o icon" aria-hidden="true"></i>
+                    </div>
+                    <input id="taskToAdd" type="text" placeholder="Task to Add...">
+                </label>
+                <input id="submitBtn" class="lightModeBtn" type="button" value="Add Task">
+            </div>
+            <div id="taskList">
+            </div>
+            <input type="button" class="lightModeBtn" value="Delete All TODO's" id="resetAll">
+        </section>
+        <div class="popup">
+            Click on Any Task to Mark it as Completed and double click to delete it. <span id="closePopup"><i class="fa fa-times" aria-hidden="true"></i>
+</span>
+        </div>
+        <footer>
+            <div>
+                <a href="https://github.com/abhaygupta08" target="_blank"> <i class="fa fa-github iconz" aria-hidden="true"> </i>
+                </a>
+                <a href="https://linkedin.com/in/abhaygupta08" target="_blank"> <i class="fa fa-linkedin iconz"
+                        aria-hidden="true"> </i> </a>
+                <a href="https://codepen.io/abhaygupta08" target="_blank"> <i class="fa fa-codepen iconz" aria-hidden="true">
+                    </i> </a>
+            </div>
+            Made by Abhay - © 2021
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
