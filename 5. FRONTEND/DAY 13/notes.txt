@@ -1,0 +1,64 @@
+Promise 
+
+var promise = new Promise(function);
+
+Promise state (status)
+ |
+ |----> Resolve 
+ |
+ |----> Pending
+ |
+ |----> Reject
+
+[+] when we pass function to Promise we need to call that promise or function for execution
+[+] Function passed in Promise works asynchornously
+
+----------------------------------------------------------
+
+Two params can be passed to function passed in Promise
+|
+|---> resolve
+|---> reject
+
+var pp = Promise(
+function (resolve,reject){
+    if(condSatisfy==true){
+        resolve(anyArgs)
+    }
+    else{
+        reject(anyArgs)
+    }
+})
+
+
+USAGE : 
+pp
+.then(data => {
+    //operation on data
+    //resolved
+})
+.catch(error => {
+    //operation on error
+    //rejected
+})
+
+---------------------------------------------------------
+FETCH    -> Promise
+
+fetch("getURL")
+.then(data => {
+    //any operation or DOM Manipulation/
+})
+
+---------------------------------------------------------
+async  - keyword used before fxn to make a function call asynchornous
+await - used before promise to wait untill promise is resolved
+
+
+async function dataAA(){
+    const data = await fetch("https://api.github.com/users/abhaygupta08")
+    res = await data.json();
+    console.log(res);
+}
+dataAA()
+
