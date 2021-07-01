@@ -11,11 +11,13 @@ body{
     align-items: center;
 }
 .memory-game{
+	position:relative;
+	top: -44px;
     display:flex;
     flex-wrap: wrap;
     align-content:center;
-    width:90vw;
-    height:90vw;
+    width:clamp(100px,90vw,600px);
+    height:clamp(100px,90vw,600px);
     margin: auto;
     perspective: 1000px;
     overflow: hidden;
