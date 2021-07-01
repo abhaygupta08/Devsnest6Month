@@ -10,33 +10,60 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.row{
+.memory-game{
     display:flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    align-content:center;
+    width:90vw;
+    height:90vw;
+    margin: auto;
+    perspective: 1000px;
+    overflow: hidden;
 }
-.card{
-    margin:20px;
-    height:100px;
-    width:100px;
+
+.memory-card{
+    width:calc(25% - 10px);
+    height:calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
-.card.yellow{
-    background:yellow;
+.memory-card:active{
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}   
+.front-face,.back-face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    /* padding:10px; */
+    border-radius: 5px;
+    background-color:indigo;
+    backface-visibility: hidden;
 }
-.card.blue{
-    background:blue;
+.front-face{
+    transform: rotateY(180deg);
 }
-.card.green{
-    background:green;
+.memory-card.flip{
+    transform: rotateY(180deg);
 }
-.card.violet{
-    background:violet;
-}
-.card.maroon{
-    background:maroon;
-}
-.card.orange{
-    background:orange;
-}
-.card.hide{
+
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position:fixed;
+    bottom:0;
+    width:100%;
     background-color: #1f1f1f;
+    color:white;
+    padding:15px;
+}
+
+header{
+    margin: 10px;
+    margin-bottom: -35px;
 }
