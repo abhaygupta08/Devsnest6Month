@@ -1,0 +1,49 @@
+For react we need Node
+
+node and npm
+
+then 
+
+>> npm install -g create-react-app 
+g for globally
+
+>> npx create-react-app app-name
+
+
+>> npm start 
+to start a server
+
+public mei render hone wali html
+
+src mei uska data aur components
+
+functional components - same as tags in html contain data and other components
+returns jsx
+ 
+ --------------------------------
+
+import export
+
+app.jsx
+    functional components
+    export default App;
+
+then in index.js
+    import App from "./app"
+    then use normally
+
+------------------------------------
+
+USING CSS
+
+src mei style.css 
+then app.jsx mei 
+    import "./style.css"
+
+in place of in tags class="CN"
+we use ClassName="CN"
+
+in style.css
+    .CN{
+        //styles
+    }
