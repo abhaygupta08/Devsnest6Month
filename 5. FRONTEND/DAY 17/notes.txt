@@ -1,0 +1,35 @@
+[1.] 
+jsx 
+same as html
+but camel case
+
+[2.]
+import "./App.css";
+
+[3.]
+props
+
+<Card name="dfdf" title="OK" />
+
+function Card(props){
+	props.name  ==> "dfdf",
+	props.title 
+}
+
+used to render different things in same card CardComponents
+
+
+[4.] 
+instead of props.key
+use 
+function({name,title}){
+name ===>> dfdf
+title ====>> OK
+
+use directly
+}
+
+[5.]
+props are imutable
+
+ 
