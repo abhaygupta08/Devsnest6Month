@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+body{
+  min-height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#chess{
+  border:1px solid;
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  background: #1f1f1f;
+  width:222px;
+  height:222px;
+  overflow: hidden;
+  box-sizing:border-box;
+}
+.box{
+    width: 20px;
+    /* display: flex; */
+    height: 20px;
+}
+.box:nth-child(even){
+  background: white;
+}
+.box:nth-child(odd){
+  background: black;
+}
