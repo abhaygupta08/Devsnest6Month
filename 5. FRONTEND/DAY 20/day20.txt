@@ -1,0 +1,27 @@
+import Reaxt, {useState} from "react";
+
+function App(){
+const [count,setCount] = UseState(0);
+// 0 is initial val of count
+
+<button onClick="() => {
+SetCount(5);
+}">{count}</button>
+
+}
+
+## Button will have val 0
+## on click changes to 5
+
+
+[2.]
+UseEffect()
+
+import React,{useState,useEffect} from "react";
+
+useEffect(() => {
+// execute this code when below states are updated
+},[state1,state2,...])
+
+
+
