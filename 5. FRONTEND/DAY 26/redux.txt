@@ -1,0 +1,12 @@
+npx create-react-app //
+
+npm install redux
+npm install react-redux
+
+
+            state
+       /	      \
+store  			UI
+    \                   /
+    reducers------actions 
+
