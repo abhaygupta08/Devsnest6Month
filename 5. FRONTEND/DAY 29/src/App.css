@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  box-sizing:border-box;
+  padding:0;
+}
+body{
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #1f1f1f;
+}
+.App{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:100%;
+  height:100vh;
+}
+form{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+input,button{
+  margin:10px 0;
+  padding:5px;
+  font-size:100%;
+  border-radius:5px;
+  border:1px solid #1f1f1f;
+  background:none;
+}
+button:hover{
+  color:white;
+  background: #1f1f1f;
+  cursor: pointer;
+}
+#toggleTheme{
+  position: fixed;
+  right:10%;
+  top:5%;
+  cursor: pointer;
+}
+
+.WeatherInfo{
+  width:clamp(300px,50vw,500px);
+  height:300px;
+  box-shadow: -2px 0px 24px -5px rgba(0,0,0,0.65);
+-webkit-box-shadow: -2px 0px 24px -5px rgba(0,0,0,0.65);
+-moz-box-shadow: -2px 0px 24px -5px rgba(0,0,0,0.65);
+border-radius:10px;
+border:1px solid rgba(107, 107, 107, 0.418);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherData{
+  width:100%;
+  height:33.3%;
+  display:flex;
+  justify-content: center;
+}
+.weatherData:nth-child(2){
+  flex-direction: column;
+  align-items: center;
+}
+.weatherData:nth-child(3){
+  align-items: center;
+  justify-content:space-around;
+}
+
+.weatherData > div > div:nth-child(2) {
+  font-size:1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+.weatherData > div > div:nth-child(2) >span{
+  font-size:0.8rem;
+}
+
+
+.App.dark{
+  background: #1f1f1f;
+  color:white;
+}
+.WeatherInfo.dark{
+  color:white;
+}
+input.dark,button.dark{
+  border:1px solid white;
+  color:white;
+}
+button.dark:hover{
+  color: #1f1f1f;;
+  background: white;
+}
