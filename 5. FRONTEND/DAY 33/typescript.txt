@@ -1,0 +1,129 @@
+TypeScript
+
+- used to define type of vars of js
+
+npm install -g typescript
+
+file name extension - ts
+
+jsx === tsx
+
+tsc - type script compiler
+
+to run 
+tsc main.ts
+or 
+tsc main.ts --watch
+
+--------------------------------------
+
+[1.]
+to declare variables 
+let n:number=10;  //integer and float
+let s:string="thisisastring";
+let b:boolean=true;
+let nn:null=null;
+
+let arr:number[] = [1,3,4];
+let arr:string[] = ["a","b","c"];
+
+let a:any = 10;
+any - means any type 
+
+[2.]
+to give multiple psbl scopes
+let a:(number|string)
+give a bracket and give types with OR
+
+[3.]
+For Objects
+-- use interface
+
+interface User{
+name:string,
+age:number
+}
+
+let user:User = {
+  name : "John",
+  age : 30,
+};
+
+
+[4.]
+for classes we can directly declare function in it
+
+class App{
+printHello(){
+	console.log('hello');
+	}
+}
+
+const app = new App();
+app.printHello();
+
+[5.]
+type Door = "open" | "close";
+let door:Door = "open";
+
+-- door will have only 2 psbl values
+we can't assign other than "open","close"
+
+[6.]
+For function
+
+function add(a:number, b:number):number{
+return a+b;
+}
+
+-------------------------------------
+[7.]
+TYPSCRIPT with react
+
+npx create-react-app react-ts-app --template typescript
+
+
+[8.]
+import React,{FC,ReactElement} from "react";
+fc -> functional components
+
+const App:FC = () : ReactElement => {
+	return()
+}
+
+[9.]
+Props
+<App title="dsdsd"/>
+
+interface AppProps {
+	title : string,
+}
+const App : FC<AppProps> = ({title}) :ReactElement =>{
+	return()
+}
+
+OR
+
+const App:FC = ({title} : AppProps) :ReactElement => {
+	return ()
+}
+
+[10.]
+Hooks
+useEffect - same
+
+useState()
+const [count,setCount] = useState : type(0);
+useState<number | null>(null)
+useState<number | null>(0)
+
+cont [count,setCount] = useState<number | null>(null);
+useEffect(() => {
+setCount(0)
+},[])
+if(count!=null ? (
+<button onClick={() => {setCount(count+1)}}>{count}</button>
+):(
+Loading ...
+))
+

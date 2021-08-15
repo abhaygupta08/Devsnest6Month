@@ -1,0 +1,59 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.mainPage {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height:100vh;
+}
+input.formOptions,form button.formOptions{
+  padding:10px;
+  margin:10px 0px;
+  width:100%;
+}
+form button.formOptions{
+  background:none;
+  cursor: pointer;
+}
+form button.formOptions:hover{
+  color:white;
+  background:#1f1f1f;
+}
+form{
+  margin:50px 0px;
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+  width:500px;
+}
+.toggle-theme{
+  position:fixed;
+  top: 20px;
+  right: 20px;
+  padding:5px;
+}
+
+.mainPage.dark{
+  background:#1f1f1f;
+  color:white;
+}
+input.formOptions.dark{
+  background:#1f1f1f;
+  color:white;
+  border:1px solid white;
+  outline: 1px solid white;
+}
+form button.formOptions.dark{
+  color:black;
+  background:white;
+}
+form button.formOptions:hover{
+  color:white;
+  background:black;
+}
+
+li{
+  list-style-type: none;
+}
