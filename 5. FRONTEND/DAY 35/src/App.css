@@ -1,0 +1,90 @@
+.App{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+nav{
+    width:70vw;
+    height:50px;
+}
+nav img{
+    width:15vw;
+    height:100%;
+    z-index: 1;
+}
+
+nav ul{
+        width:55vw;
+        display:inline-flex;
+        justify-content: flex-end;
+    }
+nav ul li {
+        margin-right: 10px;
+        height:50px;
+        list-style-type: none;
+}
+nav button,nav input{
+    height:30px;
+}
+    .showMenu{
+        display:none;
+    }
+
+@media only screen and (max-width:768px) {
+    nav{
+        width:100vw;
+        height:40px;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        background: #3f3f3f34;
+    }
+    nav ul{
+        position:relative;
+        top:-100%;
+        height:0;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        width:100%;
+        transition: all .2s ease-in-out;
+    }
+    nav li{
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+    nav img{
+        width:50vw;
+        height:40px;
+    }
+
+
+    nav ul.toggle{
+        position:relative;
+        top:0;
+        height:120px;
+        overflow:visible;
+        display:flex;
+        flex-direction:column;
+        background: #3f3f3f34;
+    }
+    .showMenu{
+        display:inline-block;
+        position:absolute;
+        right:5px;
+        top:5px;
+    }
+    section{
+        width:90vw !important;
+    }
+}
+
+section{
+    margin-top:30px;
+    width:50vw;
+
+    background:red;
+}
