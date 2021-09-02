@@ -1,0 +1,76 @@
+redis 
+
+
+[1.] redis-cli // to run 
+
+[2.] SET key value
+
+[3.] GET key
+
+[4.] value always stored as string 
+
+[5.] DEL key
+
+[6.] EXISTS key  // ret 1 if exists else 0
+
+[7.] KEYS * // returns list of all keys in redis
+
+[8.] FLUSHALL // delete all key value pairs
+
+[9.] ttl key //will tell when key will expire
+ttl == time to live
+
+[10.] expire key time(inSec) //will expire key in time seconds
+
+[11.] Initalise with expiry
+setex key seconds value
+setex = set expiry
+
+[12.] lpush lpop
+
+lpush key value
+=* GET key will not work
+
+LRANGE key 0 -1
+        startingIndex endingInd
+// retuns list with index and elements
+
+rpush rpop
+  will add or remove from end of list 
+
+lpop key
+rpop key
+
+[13.] Storing as Set
+unique and sorted
+
+SADD key value
+set add
+
+SMEMBERS key
+
+[14.] Storing Objects
+
+HSET ObjectName key value
+
+{
+  ObjectName : {
+	key : value,
+	}
+}
+
+[15.]
+HGET ObjectName key
+HGETALL ObjectName
+
+[16.]
+Remove from Object in Redis
+HDEL ObjectName key
+
+
+HEXISTS ObjectName key
+
+[17.]
+Access Element at Specific Index of array
+LRANGE key ind ind
+

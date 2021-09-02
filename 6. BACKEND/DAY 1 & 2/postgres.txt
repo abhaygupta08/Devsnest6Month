@@ -1,0 +1,162 @@
+-- collection of tables
+
+default user postgres
+
+
+[1.] To initailise progres
+psql -U UserName
+
+[2.] To create user
+CREATE USER UserName WITH PASSWORD 'password';
+
+[3.] DataBase --- collection of tables k/a Database
+
+CREATE DATABASE DatabaseName;
+
+GRANT ALL PRIVILEGES ON DATABASE DatabaseName to UserName;
+
+ALL change to 
+SELECT UPDATE INSERT DELETE
+
+
+[4.]
+\l
+lists all db with user and permissions
+
+[4.] TO go to database
+\c DatabaseName
+
+[5.] Delete Database
+DROP DATABASE DatabaseName
+
+DROP DATABASE IF EXISTS DatabaseName;
+
+[6.] Create Table
+Table Name
+Column Name
+
+CREATE TABLE TableName(
+ID INT NOT NULL,
+Name CHAR[50],
+AGE INT,
+ADDRESS TEXT
+);
+
+[7.]
+to See table
+
+\d
+
+
+[8.]
+\d TableName
+
+// returns colName with type
+
+[9.]
+Remove Table
+DROP TABLE COMPANY;
+
+[10.]
+To exit form Postgres
+
+\q
+ 
+--------------------
+--------------------
+database - drive
+SCHEMA - folders
+
+[1.] CREATE SCHEMA SchemaName;
+
+CREATE TABLE mySchema.company(
+ID INT NOT NULL,
+NAME VARCHAR[20] NOT NULL,
+AGE INT NOT NULL,
+ADDRESS CHAR(50),
+SALARY DECIMAL(18,2),
+PRIMARY KEY(ID)
+);
+
+
+[2.] DROP SCHEMA SchemaName CASCADE;
+
+[3.] Insertion in table
+(if in schema then schema.table)
+
+INSERT INTO COMAPANY(ID,NAME,ADDRESS,SALARY,JOIN_DATE) VALUES (1,Paul,'California',20000.00','2001-07-13' )
+
+[4.] View data in Table
+SELECT * FROM TABLENAME;
+
+SELECT COUNT(*) as "RECORDS" FROM TABLE_NAME;
+
+-= records is any text
+
+SELECT * FROM COMPANY WHERE AGE>=25 AND SALARY<=20000;
+
+SELECT * FROM COMAPNY;
+//returns all
+
+[random] SELECT (EXPRESSION) AS "ANY_TEXT";
+
+SELECT CURRENT_TIMESTAMP;
+//returns current time 
+
+SELECT * FROM COMAPNY WHERE AGE IS NOT NULL;
+
+//is operator also works
+
+Select with regex
+SELECT * FROM COMPANY WHERE NAME LIKE "P%';
+//starts with P
+% any length any char
+_ any char length 1
+e.g., P_ul
+
+SELECT * FROM COMPANY WHERE SALARY::TEXT LIKE '200%';
+
+[+] REGEX works on string only
+[+] SALARY::TEXT --> typecast to text
+
+
+SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;
+
+WHERE AGE IN (25,37);
+NOT IN //also works
+
+
+[5.] Update in database
+UPDATE COMPANY SET SALARY = 15000 WHERE ID=3;
+
+UPDATE COMPANY SET ADDRESS='Texas', SALARY = 20000 WHERE ID=2;
+
+DELETE FROM COMPANY WHERE ID=2;
+
+
+[6.]
+Interconnecting Tables
+FOREIGN KEY
+// here primary key is used
+
+CREATE TABLE CUSTOMERS(
+customer_id INT NOT NULL,
+customer_name VARCHAR(225) NOT NULL,
+PRIMARY KEY (customer_id)
+);
+
+CREATE TABLE contacts(
+contact_id INT NOT NULL,
+contact_name VARCHAR(225) NOT NULL,
+phone VARCHAR(15),
+email VARCHAR(100),
+PRIMARY KEY(contact_id)
+CONSTRAINT foreign_key_customer
+	FOREIGN_KEY (customer_id)
+		REFERNCES customers(customer_id)
+		ON DELETE CASCADE
+);
+
+// watch out tabs
+// ON DELETE CASCADE means if from customer table this customer_id is deleted then delete it too from contacts
+

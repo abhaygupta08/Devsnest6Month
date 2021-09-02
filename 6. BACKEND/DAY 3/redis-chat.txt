@@ -1,0 +1,79 @@
+        __==Redis==__ 
+
+pub - publisher  -  commentor
+sub - subscriber  - viewer
+
+
+SUBSCRIBE channelName
+
+PUBLISH channelName message
+
+
+[2.]
+pattern subscribe to subscribe all channels with this pattern
+
+PSUBSCRIBE d*
+
+[3.]
+UNSUBSCRIBE ChannelName
+
+PUNSUBSCRIBE pattern
+p*
+
+
+[4.]
+storing chats in streams
+
+streams
+
+XADD mystream anyAdress key
+
+XADD myStream 10000 name Abhay
+
+-= you can replace anyAddress with * 
+redis will give id according to timestamp
+
+[6.]
+To put limit on number of entries
+
+XADD mystream MAXLEN 10000 * name devsnest
+
+[7.]
+read from stream
+XREAD COUNT 200 STREAMS mystream  startingAdd
+
+XREAD COUNT 200 STREAMS mystrea m 0
+
+[8.]
+Remove user if inactive
+XREAD BLOCK timeInMS STREAMS mystream 0
+
+// close stream if no data comes in mystream stream after time in ms
+
+XREAD BLOCK 10000 STREAMS mystream 0
+
+// to never expire set timeTo - 0
+
+XREAD BLOCK 10000 STREAMS mystream $
+// will connect and chk for new entry and waits for it only 10 seconds
+// like listen
+// if got data show data and close else close after block time
+
+[8.]
+fetch all data
+
+XRANGE mystream startingID endingID
+// sends all
+XRANGE mystream startingID endingID COUNT 10
+// sends 10
+
+....+++++++++....
+if not know ids
+XRANGE mystream - + COUNT 2
+// first 2 vals
+
+///== read reverse
+XREVRANGE + - COUNT 2
+// last 2 vals
+
+
