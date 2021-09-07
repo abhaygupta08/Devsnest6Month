@@ -1,0 +1,52 @@
+var fs = require('fs');
+// file system
+
+fs.mkdirSync('folderName');
+
+fs.writeFileSyc('filename','text',err => {
+if(err){console.log(err);}
+})
+
+fs.appendFileSync('file','text');
+
+fs.readFileSync('filePath');
+// returns buffer
+fs.readFileSync('filePath','utf-8');
+// into text
+
+fs.renameSync('initalFileName','NewFileName');
+
+fs.unlinkSync('path to file');
+// removes file
+
+fs.rmdirSync('path to folder');
+
+## If we want to delete a folder we have to delete all files inside it.. then delete folder
+
+.exit 
+// to end node enviroment
+ 
+node index.js
+//execute node file .js
+
+-----------
+
+require_test.js
+class Test{
+print(){...}
+}
+
+module.exports = Test;
+
+
+index.js
+
+var Test = require('./require_test');
+
+var obj = new Test();
+// to use
+obj.print();
+
+// ## used to use same things in different files
+
+ 
