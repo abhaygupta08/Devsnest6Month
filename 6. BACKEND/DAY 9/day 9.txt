@@ -1,0 +1,83 @@
+boiler plate
+npx express-generator
+
+[+]
+to run two cmd in cmd in one go
+
+mkdir abhay && cd abhay
+
+
+[1.]
+global variable 
+__dirname
+
+stores current path for index.js file
+
+[2.]
+to send static files better practise is to use public folder and then put all public files in it.
+
+const path = require('path');
+
+
+res.sendFile('filePath','newNameForFile'); error
+
+res.sendFile(path.join(__dirname,'filePath'),'newNameForFile');
+// second param is optional
+// all files that browser can render then will render on sending
+
+[3.]
+res.download('path','newName');
+
+[4.] 
+To send dyanamic html files 
+jade
+npm i -s jade
+
+in starting
+
+app.set('views'.path.join(__dirname,'views');
+app.use('view engine'.'jade')
+
+// in views folder
+fileName.jade
+
+// # layout.jade
+html
+  head
+    title = title
+    link(rel='stylesheet', href='')
+  body
+    block content
+
+// # index.jade
+extends layout
+
+block content
+  h1 = title
+  p Welcome to #{title}
+
+
+// # index.js when jade and views are setted up
+res.render('layout',{title : 'New Title'})
+
+#### benifit : use can make better use of apis
+
+[5.]
+For using cookies
+res
+.status(201)
+.cookie("toke","test",{
+expire : new Date(Date.now() + 8 * 3600000)
+})
+.cookie("hello","hello")
+.redirect(301 , "/admin")
+})
+
+
+
+[6.]
+express static
+express urlencoded
+
+app.use('/user','userroute')
+
