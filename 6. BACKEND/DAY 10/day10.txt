@@ -1,0 +1,60 @@
+Day 10
+
+[10.]
+connect with ssh
+
+nvm - node version manager
+https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/
+
+install multiple versions of node and use them simultaneously
+
+[+]
+nvm install vX
+X is version
+
+[+]
+nvm ls
+list all version
+
+[+]
+nvm use vX
+X is version
+
+[2.]
+to run npm in background (forever)
+pm2 and forever are two pakages used
+
+npm install -g forever
+
+
+[+]
+forever list 
+list of all running backgrounds
+
+[+]
+forever start fileName
+
+[-] for express 
+forever start ./bin/www
+
+[+]
+forever stopall
+
+forever start ./bin/www
+
+
+[3.]
+To edit files on ubuntu use vim
+
+vim ./bin/www
+
+go to line using arrow
+use i to insert
+use esc to exit editing mode
+
+use   wq    to save
+
+[4.]
+ll - list for all files and folder
+rm -rf foldername
+
