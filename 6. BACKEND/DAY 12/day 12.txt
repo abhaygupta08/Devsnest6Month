@@ -1,0 +1,77 @@
+day 12
+
+redis store 
+redis client
+
+>npm i -s express-session redis connect-redis
+
+connection and all
+
+
+------------
+
+>npm i -s mongodb mongoose
+
+
+var mongoose = require('mongoose');
+
+var mongodb = 'mongodb://127.0.0.1/my_database';
+
+mongoose.connect(mongodb, {
+useNewUrlParser : true,
+useUnifiedTopology : true
+})
+
+var db = mogoose.connection;
+
+db.on('error',console.error.bind(console, "Mongodb connection error"));
+
+db.on('connect',console.log('Connection Okay'))
+
+
+=====
+in app.js
+require('database/mongodb');
+
+// will copy and put all lines of file in app.js
+
+====
+in models/mongo.js
+
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
+
+const UserSchema = new Schema({
+name : {type :String, default : ''}
+password : {type :String, default : ''}
+});
+
+module.exports = User = mongoose.model('User' , UserSchema);
+
+
+==
+in constrollers
+const User = require('../models/mongo');
+
+rest all same
+-------------------
+
+
+Directly connecting Postgres
+
+const Pool = require('pg').Pool;
+const pool = new Pool({
+user : 'postgres'
+host : 'localhost',
+passowrd : '',
+port : 5432
+})
+
+router.get(dsd,fuction(req){
+
+pool.query('SELECT * FROM '"Users"',(err,result) => {
+if(err) throw err;
+res.status(200).json(result);
+})
+
+})
