@@ -1,0 +1,33 @@
+.env files for config of server
+
+// add to git ignore
+
+>npm install -s dotenv
+
+
+config
+|-> main js (to import that env to js then can use their vars in workspace)
+|-> js (to store that dyanamic vars)
+
+Authentication
+|
+|-> Manual
+|-> Using (package)
+
+Manual -> 
+- Database mei hi ek role naam k field add karde
+- Specific user k liye specific role
+- turant redis mei daldo login hote hi
+- auth k liye redis se session mei check karlo role if sahi hai to next nhi to error
+
+Auto ->
+- using jwt
+- install 
+- require use as middleware
+- initialse in different folder
+- boiler code
+
+
+Main thing is to save role in dB then on login save in session 
+when requesting a content check for role in session through redis
+
